@@ -1,6 +1,6 @@
 # All credit goes to Jason Wilder and all the contributors of his original Github repository
 
-FROM nginx:1.17.6
+FROM nginx:1.19.3
 LABEL maintainer="Alexander Krause <akr@informatik.uni-kiel.de>"
 
 # Install wget and install/updates certificates
