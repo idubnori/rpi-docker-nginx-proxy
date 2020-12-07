@@ -1,7 +1,8 @@
 # All credit goes to Jason Wilder and all the contributors of his original Github repository
 
-FROM nginx:1.19.3
+FROM arm32v7/nginx:1.19.3
 LABEL maintainer="Alexander Krause <akr@informatik.uni-kiel.de>"
+COPY qemu-arm-static /usr/bin/
 
 # Install wget and install/updates certificates
 RUN apt-get update \
