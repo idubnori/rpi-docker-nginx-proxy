@@ -1,8 +1,7 @@
 # All credit goes to Jason Wilder and all the contributors of his original Github repository
 
-FROM arm32v7/nginx:1.19.3
+FROM arm32v7/nginx:1.19
 LABEL maintainer="Alexander Krause <akr@informatik.uni-kiel.de>"
-COPY qemu-arm-static /usr/bin/
 
 # Install wget and install/updates certificates
 RUN apt-get update \
@@ -21,7 +20,7 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf \
 ADD https://github.com/djmaze/armhf-forego/releases/download/v0.16.1/forego /usr/local/bin/forego
 RUN chmod u+x /usr/local/bin/forego
 
-ENV DOCKER_GEN_VERSION 0.7.4
+ENV DOCKER_GEN_VERSION 0.9.0
 
 RUN wget https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VERSION/docker-gen-linux-armhf-$DOCKER_GEN_VERSION.tar.gz \
  && tar -C /usr/local/bin -xvzf docker-gen-linux-armhf-$DOCKER_GEN_VERSION.tar.gz \
